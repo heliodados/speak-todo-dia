@@ -8,3 +8,4 @@ android/local.properties
 android/keystore.properties
 *.jks
 .kotlin/
+*.apk

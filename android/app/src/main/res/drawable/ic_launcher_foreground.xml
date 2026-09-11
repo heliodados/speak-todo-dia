@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- O Pipo, o mesmo papagaio do app, desenhado com os mesmos traços do SVG. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <group
+        android:scaleX="0.6"
+        android:scaleY="0.6"
+        android:translateX="22.8"
+        android:translateY="20.4">
+        <path android:fillColor="#E2483D" android:pathData="M30,96 q-14,10 -18,4 q4,-12 16,-20 z" />
+        <path android:fillColor="#2F6FED" android:pathData="M34,100 q-10,12 -6,12 q8,-6 12,-14 z" />
+        <path android:fillColor="#E2483D" android:pathData="M54,12 q-4,-12 2,-10 q3,4 2,10 z" />
+        <path android:fillColor="#FFB020" android:pathData="M60,11 q2,-12 6,-8 q1,6 -4,10 z" />
+        <path android:fillColor="#2F6FED" android:pathData="M48,14 q-8,-8 -4,-10 q6,2 7,9 z" />
+        <path android:fillColor="#3BB54A" android:pathData="M50,43 a27,31 0 1,0 0.01,0 z" />
+        <path android:fillColor="#9BE39B" android:pathData="M55,59 a16,21 0 1,0 0.01,0 z" />
+        <path android:fillColor="#2E8B3D" android:pathData="M26,62 q-10,22 4,40 q6,-18 10,-36 z" />
+        <path android:fillColor="#3BB54A" android:pathData="M58,15 a25,25 0 1,0 0.01,0 z" />
+        <path android:fillColor="#FFFFFF" android:pathData="M63,30 a11,11 0 1,0 0.01,0 z" />
+        <path android:fillColor="#1B2A41" android:pathData="M64,36.4 a4.6,4.6 0 1,0 0.01,0 z" />
+        <path android:fillColor="#FFFFFF" android:pathData="M65.8,37.8 a1.6,1.6 0 1,0 0.01,0 z" />
+        <path android:fillColor="#F5A623" android:pathData="M78,38 q16,2 14,12 q-10,6 -16,-2 z" />
+        <path android:fillColor="#F5A623" android:pathData="M40,104 l-6,6 l2,2 l6,-6 z M44,104 l0,8 l3,0 l0,-8 z M60,104 l6,6 l-2,2 l-6,-6 z M56,104 l0,8 l-3,0 l0,-8 z" />
+    </group>
+</vector>

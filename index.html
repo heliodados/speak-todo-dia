@@ -477,6 +477,28 @@
 </div>
 
 <script>
+  // No APK, o Android injeta `AndroidSpeech`. Aqui ele vira um SpeechRecognition igual ao do Chrome,
+  // para o resto do app não precisar saber onde está rodando.
+  if (window.AndroidSpeech) {
+    window.SpeechRecognition = function () {
+      this.lang = 'en-US'; this.interimResults = false; this.maxAlternatives = 5;
+      this.start = () => { window.__sr = this; AndroidSpeech.start(this.lang, this.maxAlternatives); };
+      this.abort = () => { window.__sr = null; AndroidSpeech.stop(); };
+      this.stop = this.abort;
+    };
+    window.__srResult = (alts) => {
+      const r = window.__sr; if (!r) return; window.__sr = null;
+      if (r.onresult) r.onresult({ results: [alts.map(t => ({ transcript: t }))] });
+      if (r.onend) r.onend();
+    };
+    window.__srError = (code) => {
+      const r = window.__sr; if (!r) return; window.__sr = null;
+      if (r.onerror) r.onerror({ error: code });
+      if (r.onend) r.onend();
+    };
+    window.__androidBack = () => { const h = document.getElementById('home'); if (!h.hidden) return false; showHome(); return true; };
+  }
+
   const DATA = [
     { id: 'palavrinhas', nome: 'Palavrinhas', emoji: '✨', h: 55, items: [
       ['yes', 'sim', '👍'], ['no', 'não', '👎'], ['hi', 'oi', '👋'], ['bye', 'tchau', '🙋'],
@@ -828,6 +850,8 @@
       cb(null, e.error === 'not-allowed' ? 'Precisa permitir o microfone no navegador.'
         : e.error === 'no-speech' ? 'Não ouvi nada. Fale mais perto do microfone.'
         : e.error === 'network' ? 'Sem internet para o microfone funcionar.'
+        : e.error === 'no-service' ? 'Este celular não tem o reconhecimento de voz do Google.'
+        : e.error === 'busy' ? 'O microfone estava ocupado. Tente de novo.'
         : 'Não consegui ouvir. Tente de novo.');
     };
     r.onend = () => { if (!got) cb(null, 'Não ouvi nada. Fale mais perto do microfone.'); };

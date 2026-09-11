@@ -262,7 +262,7 @@
     </div>
     <button class="btn wide" id="to-progress" style="width:100%">📈 Minha evolução</button>
     <div id="levels"></div>
-    <p class="foot">Ganhe pelo menos 1 estrela em cada tema para abrir o próximo nível.</p>
+    <p class="foot">Todos os níveis estão abertos. A meta é 3 estrelas em cada tema.</p>
   </main>
 
   <!-- Evolução -->
@@ -443,7 +443,7 @@
   const catById = (id) => DATA.find(c => c.id === id);
   const levelOf = (c) => LEVELS.find(l => l.cats.includes(c.id));
   const levelDone = (l) => l.cats.every(id => (store.best[id] || 0) >= 1);
-  const levelOpen = (i) => i === 0 || levelDone(LEVELS[i - 1]);
+  const levelOpen = (i) => true;   // trava desligada a pedido do Hélio: todos os níveis abertos
 
   // ---------- progresso guardado no navegador ----------
   let store = load();

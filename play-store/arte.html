@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Arte para a loja</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Nunito:wght@700;800&display=swap">
+<style>
+  body { margin: 0; background: #fff; }
+  .icon { width: 512px; height: 512px; background: #2F6FED; display: grid; place-items: center; }
+  .icon svg { width: 400px; height: 430px; }
+  .feature { width: 1024px; height: 500px; background: linear-gradient(135deg, #2F6FED, #1B4FBF); display: flex; align-items: center; gap: 40px; padding: 0 70px; box-sizing: border-box; color: #fff; font-family: "Nunito", "Segoe UI", sans-serif; }
+  .feature svg { width: 300px; height: 323px; flex: none; }
+  .feature h1 { font-family: "Fredoka", "Segoe UI", sans-serif; font-weight: 700; font-size: 72px; margin: 0; line-height: 1; }
+  .feature p { font-size: 30px; font-weight: 700; margin: 14px 0 0; opacity: .95; }
+  .feature .chips { margin-top: 22px; display: flex; gap: 10px; flex-wrap: wrap; }
+  .feature .chip { background: rgba(255,255,255,.18); border-radius: 99px; padding: 8px 16px; font-size: 22px; font-weight: 800; }
+</style>
+</head>
+<body>
+<div id="icon" class="icon"></div>
+<div id="feature" class="feature">
+  <div id="feature-parrot"></div>
+  <div>
+    <h1>Speak Todo Dia</h1>
+    <p>Inglês do dia a dia para crianças: ouvir, falar e jogar</p>
+    <div class="chips"><span class="chip">🔊 540 palavras faladas</span><span class="chip">🎤 Repita no microfone</span><span class="chip">🏁 Corrida de palavras</span></div>
+  </div>
+</div>
+<script>
+  function parrot(mood) {
+    const eye = mood === 'party' ? '<path d="M58 40 q6 -7 12 0" stroke="#1b2a41" stroke-width="3.2" fill="none" stroke-linecap="round"/>' : '<circle cx="64" cy="41" r="4.6" fill="#1b2a41"/><circle cx="65.8" cy="39.4" r="1.6" fill="#fff"/>';
+    const beak = '<path d="M78 38 q16 2 14 12 q-8 2 -14 -2 z" fill="#F5A623"/><path d="M78 48 q10 6 12 2 q-6 8 -12 4 z" fill="#E08E13"/>';
+    return `<svg viewBox="0 0 104 112" xmlns="http://www.w3.org/2000/svg">
+      <path d="M30 96 q-14 10 -18 4 q4 -12 16 -20 z" fill="#E2483D"/>
+      <path d="M34 100 q-10 12 -6 12 q8 -6 12 -14 z" fill="#2F6FED"/>
+      <path d="M54 12 q-4 -12 2 -10 q3 4 2 10 z" fill="#E2483D"/>
+      <path d="M60 11 q2 -12 6 -8 q1 6 -4 10 z" fill="#FFB020"/>
+      <path d="M48 14 q-8 -8 -4 -10 q6 2 7 9 z" fill="#2F6FED"/>
+      <ellipse cx="50" cy="74" rx="27" ry="31" fill="#3BB54A"/>
+      <ellipse cx="55" cy="80" rx="16" ry="21" fill="#9BE39B"/>
+      <path d="M26 62 q-10 22 4 40 q6 -18 10 -36 z" fill="#2E8B3D"/>
+      <circle cx="58" cy="40" r="25" fill="#3BB54A"/>
+      <circle cx="63" cy="41" r="11" fill="#fff"/>
+      ${eye}${beak}
+      <path d="M40 104 l-6 6 M44 104 l0 8 M60 104 l6 6 M56 104 l0 8" stroke="#F5A623" stroke-width="3.2" stroke-linecap="round"/>
+    </svg>`;
+  }
+  document.getElementById('icon').innerHTML = parrot('happy');
+  if (location.search.includes('feature')) document.getElementById('icon').style.display = 'none';
+  document.getElementById('feature-parrot').innerHTML = parrot('party');
+</script>
+</body>
+</html>

@@ -1,7 +1,7 @@
 # Mesmas versões do app da obra (LT Ponto Fácil), que compilam com o
 # Android Studio e o Gradle 9.3 instalados neste computador.
 [versions]
-agp = "8.7.3"
+agp = "8.13.0"
 kotlin = "2.1.0"
 
 [plugins]

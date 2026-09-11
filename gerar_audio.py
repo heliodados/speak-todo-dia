@@ -21,6 +21,9 @@ data_block = html[html.index("const DATA = ["): html.index("];", html.index("con
 words = re.findall(r"""\[\s*(?:'([^']*)'|"([^"]*)")\s*,\s*'""", data_block)
 words = [a or b for a, b in words]
 words = list(dict.fromkeys(words))
+vb = html[html.index("/*VERBS-START*/"): html.index("/*VERBS-END*/")]
+words += re.findall(r""":\s*'([^']*)'""", vb)
+words = list(dict.fromkeys(words))
 print(f"{len(words)} palavras encontradas")
 
 

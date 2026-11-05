@@ -63,3 +63,5 @@ Antes da publicação aberta, o Google exige 14 dias de teste fechado com 12 tes
 - Teste interno: versão 3 (1.2) publicada em 05/11/2026. Lista de testadores "Família" (3 e-mails).
 - Link para os testadores entrarem: https://play.google.com/apps/internaltest/4700619303779420412
 - A versão da loja é assinada pelo Google, então o APK instalado direto precisa ser desinstalado antes (perde o progresso salvo no aparelho).
+- 05/11/2026: todos os 11 formulários preenchidos (classificação Livre/PEGI 3, público 6 a 15, sem coleta de dados, categoria Educação, ícone e destaque rotulados como feitos com IA). Teste fechado "Alpha" criado com a versão 4 (1.3), país Brasil, listas "Família" (3) e "família e amigos" (9). 14 mudanças enviadas para revisão do Google.
+- Próximo: quando a revisão aprovar, a aba Testadores do Teste fechado mostra o link de convite; mandar aos 12 testadores; depois de 12 aceitarem e 14 dias, o botão "Solicitar a produção" libera no Painel.

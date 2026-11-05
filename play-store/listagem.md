@@ -4,7 +4,7 @@
 - `SpeakTodoDia.aab` (na pasta do app, gerado por `gradlew bundleRelease`): é o que se envia na loja. O APK é só para instalar direto.
 - `icone-512.png`: ícone do app (512 x 512).
 - `destaque-1024x500.png`: imagem de destaque.
-- `tela-*.png`: capturas de tela do celular (412 x 824).
+- `tela-*.png`: capturas de tela do celular (1080 x 1920, proporção 9:16 exigida pela loja).
 - Política de privacidade: https://heliodados.github.io/speak-todo-dia/privacidade.html
 
 ## Detalhes do app

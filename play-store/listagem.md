@@ -57,3 +57,9 @@ Antes da publicação aberta, o Google exige 14 dias de teste fechado com 12 tes
 1. Subir `versionCode` (e `versionName`) em `android/app/build.gradle.kts`.
 2. `gradlew bundleRelease` na pasta `android/` (com JAVA_HOME apontando para o Java do Android Studio).
 3. Enviar o `.aab` novo em Produção ou na faixa de teste.
+
+## Play Console (criado em 05/11/2026)
+- Nome do pacote: com.heliodados.speaktododia
+- Teste interno: versão 3 (1.2) publicada em 05/11/2026. Lista de testadores "Família" (3 e-mails).
+- Link para os testadores entrarem: https://play.google.com/apps/internaltest/4700619303779420412
+- A versão da loja é assinada pelo Google, então o APK instalado direto precisa ser desinstalado antes (perde o progresso salvo no aparelho).

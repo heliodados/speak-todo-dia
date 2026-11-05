@@ -13,6 +13,7 @@ import android.webkit.JavascriptInterface
 import android.webkit.ValueCallback
 import android.webkit.WebChromeClient
 import android.webkit.WebSettings
+import android.webkit.WebResourceRequest
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import org.json.JSONArray
@@ -45,7 +46,17 @@ class MainActivity : Activity() {
             cacheMode = WebSettings.LOAD_NO_CACHE
             textZoom = 100
         }
-        web.webViewClient = WebViewClient()
+        web.webViewClient = object : WebViewClient() {
+            // Links http(s) (política de privacidade) abrem no navegador; o app fica no WebView.
+            override fun shouldOverrideUrlLoading(view: WebView, request: WebResourceRequest): Boolean {
+                val url = request.url
+                if (url.scheme == "http" || url.scheme == "https") {
+                    startActivity(Intent(Intent.ACTION_VIEW, url))
+                    return true
+                }
+                return false
+            }
+        }
         web.webChromeClient = object : WebChromeClient() {
             override fun onShowFileChooser(
                 view: WebView, callback: ValueCallback<Array<Uri>>, params: FileChooserParams
